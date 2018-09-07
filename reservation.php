@@ -1,0 +1,220 @@
+<?php
+
+$text = "<span style='color:red; font-size: 35px; line-height: 40px; magin: 10px;'>Error! Please try again.</span>";
+
+if(isset($_POST['name']))
+{
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+	$message=$_POST['message'];
+
+	$to = "mail@evergreenpastry.com";
+	$subject = "Evergreen Pastry Shop - Online Order Form";
+	$message = " Name: " . $name ."\r\n Email: " . $email . "\r\n Message:\r\n" . $message;
+	 
+	$from = "EvergreenPastry.com";
+	$headers = "From:" . $from . "\r\n";
+	$headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n"; 
+	 
+	if(@mail($to,$subject,$message,$headers))
+	{
+	  $text = "<span style='color:blue; font-size: 35px; line-height: 40px; margin: 10px;'>Your Message was sent successfully !</span>";
+	}
+}
+?>	
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Evergreen Pastry Shop | Order</title>
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slide.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body>
+<div class="wrap-body">
+	<!--///////////////////////////////////////Top-->
+	<div class="top">
+		<h1>THANKYOU FOR CONTACTING US. WE'LL CONTACT YOU SOON.</h1>
+		<div class="zerogrid">
+			<ul class="number f-left">
+				<a href="mailto:mail@evergreenpastry.com"><li class="mail"><p>mail@evergreenpastry.com</p></li></a>
+				<li class="phone"><p>(+91) 9810437677</p></li>
+			</ul>
+			<!--<ul class="top-social f-right">
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+			</ul>-->
+		</div>
+	</div>
+	<!--////////////////////////////////////Header-->
+	<header>
+		<div class="zerogrid">
+			<center><div class="logo"><img src="images/logo.png"></div></center>
+		</div>
+	</header>
+	<div class="site-title">
+		
+		</div>
+	</div>
+    <!--//////////////////////////////////////Menu-->
+    <a href="#" class="nav-toggle">Toggle Navigation</a>
+    <nav class="cmn-tile-nav">
+		<div class="table">
+		<ul class="clearfix">
+			<li class="colour-1"><a href="index.html">Home</a></li>
+			<li class="colour-2"><a href="location.html">Location</a></li>
+			<li class="colour-3"><a href="reservation.html">Reservation</a></li>
+			<li class="colour-4"><a href="staff.html">Our Team</a></li>
+			<li class="colour-5"><a href="gallery.html">Gallery</a></li>
+		</ul>
+		</div>
+    </nav>
+	
+<!--////////////////////////////////////Container-->
+<section id="container" class="sub-page">
+	<div class="wrap-container zerogrid">
+		<div class="crumbs">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="reservation.html">Order</a></li>
+			</ul>
+		</div>
+		<div id="main-content">
+			<div class="wrap-content">
+				<div class="row">
+					<div class="col-1-3">
+						<div class="wrap-col">
+							<h3>EvergreenPastry.com currently doesn’t offers delivery option. Customers can place order by phone or drop us a query on this page.<br /><br />You can contact us  (011) 22791788 with the cake’s name as a reference for ordering the cake.<br /><br /><br />Note – The delivery option can be negotiated on the phone only in East Delhi area.</h3>
+						</div>
+					</div>
+					<div class="col-2-3">
+						<div class="wrap-col">
+							<div class="contact">
+								<div id="contact_form">
+									<form name="contact" id="contact" method="post" action="reservation.php">
+										<label class="row">
+											<div class="col-1-2">
+												<div class="wrap-col">
+													<input type="text" name="name" id="name" placeholder="Enter name" required="required" />
+												</div>
+											</div>
+											<div class="col-1-2">
+												<div class="wrap-col">
+													<input type="email" name="email" id="email" placeholder="Enter email" required="required" />
+												</div>
+											</div>
+										</label>
+										<label class="row">
+											<div class="col-2-4">
+												<div class="wrap-col">
+												<input type="text" name="subject" id="subject" placeholder="Subject" required="required" />
+												</div>
+											</div>
+											<div class="col-1-4">
+												<div class="wrap-col">
+												<input type="date"  name="date" id="date" placeholder="Date"/>
+												</div>
+											</div>
+											<div class="col-1-4">
+												<div class="wrap-col">
+												<input type="time"  name="time" id="time" placeholder="Time"/>
+												</div>
+											</div>											
+										</label>
+										<label class="row">
+											<div class="wrap-col">
+												<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
+												placeholder="Order"></textarea>
+											</div>
+										</label>
+										<center><input class="sendButton" type="submit" name="Submit" value="Submit"></center>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</section>
+
+<!--////////////////////////////////////Footer-->
+<footer class="zerogrid">
+	<div class="wrap-footer">
+		<div class="row">
+			<div class="col-1-3">
+				<div class="wrap-col">
+						<span class="fa fa-cutlery"></span>
+					<h4>ABOUT EVERGREEN PASTRY</h4>
+					<div class="row">
+						<p>Evergreen Pastry Shop values the importance involved when selecting a cake or sweet gift for all your special occasion. Creating custom cakes, wedding cakes, quinceaneras cakes and anniversaries cakes, cupcakes, pastries, breads, and gift baskets , we have built our reputation on our excellent customer service and quality cakes with creative designs. We take great pride in exceeding each of our customers’ expectations.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-1-3">
+				<div class="wrap-col">
+					<h4>Location</h4>
+					<div class="wrap-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14010.630721930349!2d77.2915119!3d28.6100446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc5d044948a0699a!2sEver+Green+Pastry!5e0!3m2!1sen!2sin!4v1460711173955" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+				</div>
+			</div>
+			<div class="col-1-3">
+				<div class="wrap-col">
+					<h4>Open Daily</h4>
+					<p><span>Mon - Fri</span> 8 am - 10 pm</p>
+					<p><span>Sat - Sun</span> 8 am - 10 pm</p>
+				</div><br />
+				<div class="wrap-col">
+					<h4>Other Info</h4>
+					<p><span>Email Address</span> mail@evergreenpastry.com</p>
+					<p><span>Cake Order Number</span>(+91) 9810437677</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<div class="wrapper">
+			Copyright Evergreen Pastry Shop. Design : <a href="http://www.mayankanand.info">Mayank Anand</a>
+		</div>
+	</div>
+</footer>
+
+
+	<!-- js -->
+	<script src="js/classie.js"></script>
+	<script src="js/demo.js"></script>
+	
+</div>
+</body></html>
