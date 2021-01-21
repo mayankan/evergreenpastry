@@ -193,8 +193,8 @@ if(isset($_POST['name']))
 			<div class="col-1-3">
 				<div class="wrap-col">
 					<h4>Open Daily</h4>
-					<p><span>Mon - Fri</span> 8 am - 10 pm</p>
-					<p><span>Sat - Sun</span> 8 am - 10 pm</p>
+					<p><span>Mon - Fri</span> 10 am - 10 pm</p>
+					<p><span>Sat - Sun</span> 10 am - 10 pm</p>
 				</div><br />
 				<div class="wrap-col">
 					<h4>Other Info</h4>
@@ -206,7 +206,7 @@ if(isset($_POST['name']))
 	</div>
 	<div class="copyright">
 		<div class="wrapper">
-			Copyright Evergreen Pastry Shop. Design : <a href="http://www.mayankanand.info">Mayank Anand</a>
+			Copyright Evergreen Pastry Shop. Design : <a href="#">Mayank Anand</a>
 		</div>
 	</div>
 </footer>
