@@ -393,4 +393,10 @@ a.button.bt2 {}
 }
 .zoom-container:hover .zoom-caption {
 	background: none;
-}		
+}
+.page {
+display: none;
+}
+.page-active {
+display: block;
+}
